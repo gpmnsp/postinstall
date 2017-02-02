@@ -6,7 +6,9 @@
 # installed system. At the moment this is Linux Mint Cinnamon 18.
 # This is work in progress. I'm just learning to write shell scripts.
 # In the course of time the script will grow and get better, hopefully.
-
+# 
+# Linux mint uses apt instead of apt-get.
+#
 ### ---> 1. edit hosts file: <--- ###
 
 sudo sed -i '2i \
@@ -45,11 +47,11 @@ sudo chmod g+w /etc/fstab
 ### ---> 3. install apps after new sys installation <--- ###
 
 ### add needed PPAs: ###
-sudo add-apt-repository -y ppa:anonbeat/guayadeque    # Guayadeque PPA
-sudo add-apt-repository -y ppa:cairo-dock-team/ppa    # Cairo-Dock PPA
-sudo add-apt-repository -y ppa:nilarimogard/webupd8   # PA-EQ etc. PPA
-sudo add-apt-repository -y ppa:team-xbmc/ppa          # Kodi PPA
-sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+sudo apt add-repository -y ppa:anonbeat/guayadeque    # Guayadeque PPA
+sudo apt add-repository -y ppa:cairo-dock-team/ppa    # Cairo-Dock PPA
+sudo apt add-repository -y ppa:nilarimogard/webupd8   # PA-EQ etc. PPA
+sudo apt add-repository -y ppa:team-xbmc/ppa          # Kodi PPA
+sudo apt add-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo apt update                                       # update packages
 
@@ -69,7 +71,7 @@ sudo apt install -y cairo-dock cairo-dock-plug-ins    # Cairo-Dock
 sudo apt install -y guayadeque                        # Guayadeque
 sudo apt install -y software-properties-common        # Kodi
 sudo apt install -y kodi                              # Kodi
-sudo aptitude install google-chrome-stable            # Google Chrome
+sudo apt install google-chrome-stable                 # Google Chrome
  ## not needed, Calibre is allready installed portable in ~/bin, but keep it as fallback:
  # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 ## update the portable Calibre installation:

@@ -1,0 +1,57 @@
+# /etc/fstab: static file system information.
+#
+# <filesys> <mount point>       <type>  <options>                               <dump>  <pass>
+#/dev/sda2   /                   ext4    errors=remount-ro                       0       1
+#/dev/sda3   /home               ext4    defaults                                0       2
+#/dev/sdb1   /media/(1)Archive   ntfs    defaults,umask=007,gid=46               0       0
+#/dev/sdb2   /media/(1)Data      ntfs    defaults,umask=007,gid=46               0       0
+#/dev/sdb3   /media/(1)Download  ntfs    defaults,umask=007,gid=46               0       0
+#/dev/sdc2   /media/Backup       ext4    defaults                                0       2
+#/dev/sda4   none                swap    sw                                      0       0
+#
+# /etc/fstab: static file system information.
+#
+### mounting raspi/fritz and windows shares: ###
+#
+# <filesys>     <mnt point>  <type> <options>                                                                                                                             <dump> <pass>
+#
+#//Fritz/fritzusb /media/fritz cifs           _netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.creds,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0 
+//pi/USB-Drive   /media/fritz cifs   vers=2.1,_netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.creds,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0 
+//Me1/e          /media/Me1_e cifs   vers=2.1,_netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.cred1,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0 
+//Me1/j          /media/Me1_j cifs   vers=2.1,_netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.cred1,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0 
+//Me1/w          /media/Me1_w cifs   vers=2.1,_netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.cred1,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0
+//Me1/m          /media/Me1_m cifs   vers=2.1,_netdev,rsize=130048,wsize=130048,uid=gpm,gid=gpm,credentials=/root/.cred1,sec=ntlm,rw,cache=strict,users,nounix,noserverino,nobrl 0 0
+#
+### mounting Hetz02 per sshfs at startup: ###
+#
+sshfs#Hetz:/ /media/Hetz fuse comment=sshfs,fsname=sshfs#Hetz:/,_netdev,noauto,users,exec,uid=1000,gid=1000,allow_other,transform_symlinks,Batchmode=yes,large_read,cache=yes,kernel_cache,Ciphers=arcfour,workaround=rename 0 0
+#
+### Original fstab entries: ###
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <filesys>                                 <mount point>  <type>  <options>              <dump> <pass>
+#
+# / was on /dev/sda2 during installation
+UUID=9f992bb5-5c59-49d7-a78a-7f66a6431872            /     ext4    errors=remount-ro         0     1
+#
+# /home was on /dev/sda3 during installation
+UUID=fab75b54-3e84-41c1-9f47-983e84879e76            /home ext4    defaults                  0     2
+#
+# /media/(1)Archive was on /dev/sdb1 during installation
+UUID=3878E54F78E50C86                    /media/(1)Archive ntfs    defaults,umask=007,gid=46 0     0
+#
+# /media/(1)Data was on /dev/sdb2 during installation
+UUID=06925353925345F9                       /media/(1)Data ntfs    defaults,umask=007,gid=46 0     0
+#
+# /media/(1)Download was on /dev/sdb3 during installation
+UUID=9E5A471D5A46F217                   /media/(1)Download ntfs    defaults,umask=007,gid=46 0     0
+#
+# /media/Backup was on /dev/sdc2 during installation
+UUID=d7c01ea9-1f94-47ff-81fb-bfcacc7dde29    /media/Backup ext4    defaults                  0     2
+#
+# swap was on /dev/sda4 during installation
+UUID=7d859a02-9c54-45fe-918e-a159343f303e             none swap    sw                        0     0
+
