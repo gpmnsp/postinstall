@@ -71,7 +71,7 @@ sudo apt install -y cairo-dock cairo-dock-plug-ins    # Cairo-Dock
 sudo apt install -y guayadeque                        # Guayadeque
 sudo apt install -y software-properties-common        # Kodi
 sudo apt install -y kodi                              # Kodi
-sudo apt install -y google-chrome-stable                 # Google Chrome
+sudo apt install google-chrome-stable                 # Google Chrome
  ## not needed, Calibre is allready installed portable in ~/bin, but keep it as fallback:
  # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 ## update the portable Calibre installation:
