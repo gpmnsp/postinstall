@@ -4,7 +4,7 @@
 # Description:
 # This script makes most of the changes that I want for a freshly
 # installed system. At the moment this is Linux Mint Cinnamon 18.
-# This is work in progress. I'm just learning to write shell scipts.
+# This is work in progress. I'm just learning to write shell scripts.
 # In the course of time the script will grow and get better, hopefully.
 
 ### ---> 1. edit hosts file: <--- ###
