@@ -46,30 +46,30 @@ sudo chmod g+w /etc/fstab
 
 ### add needed PPAs: ###
 sudo add-apt-repository -y ppa:anonbeat/guayadeque    # Guayadeque PPA
-sudo add-apt-repository -y ppa:cairo-dock-team/ppa	   # Cairo-Dock PPA
-sudo add-apt-repository -y ppa:nilarimogard/webupd8	  # PA-EQ etc. PPA
-sudo add-apt-repository -y ppa:team-xbmc/ppa				      # Kodi PPA
+sudo add-apt-repository -y ppa:cairo-dock-team/ppa    # Cairo-Dock PPA
+sudo add-apt-repository -y ppa:nilarimogard/webupd8   # PA-EQ etc. PPA
+sudo add-apt-repository -y ppa:team-xbmc/ppa          # Kodi PPA
 sudo add-apt-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo apt update																			                    # update packages
+sudo apt update                                       # update packages
 
 ### install everything: ###
-sudo apt install -y gir1.2-gtop-2.0									          # for Sys-Indicator
-sudo apt install -y gigolo													               # Gigolo
-sudo apt install -y dconf-editor									            	# dconf-Editor (misc system settings)
-sudo apt install -y mc															                 # MC
-sudo apt install -y htop														                # Htop
-sudo apt install -y easystroke											             # Mouse buttons
-sudo apt install -y screen													               # Screen
-sudo apt install -y xfce4-terminal									           # XFCE4 Terminal
-sudo apt install -y dropbox													              # Dropbox
+sudo apt install -y gir1.2-gtop-2.0                   # for Sys-Indicator
+sudo apt install -y gigolo                            # Gigolo
+sudo apt install -y dconf-editor                      # dconf-Editor (misc system settings)
+sudo apt install -y mc                                # MC
+sudo apt install -y htop                              # Htop
+sudo apt install -y easystroke                        # Mouse buttons
+sudo apt install -y screen                            # Screen
+sudo apt install -y xfce4-terminal                    # XFCE4 Terminal
+sudo apt install -y dropbox                           # Dropbox
  ## PA-EQ giving issues, canceled for now:
- # sudo apt install -y pulseaudio-equalizer					      # Pulseaudio EQ
-sudo apt install -y cairo-dock cairo-dock-plug-ins	   # Cairo-Dock
-sudo apt install -y guayadeque											             # Guayadeque
-sudo apt install -y software-properties-common			     # Kodi
-sudo apt install -y kodi														                # Kodi
-sudo aptitude install google-chrome-stable					       # Google Chrome
+ # sudo apt install -y pulseaudio-equalizer           # Pulseaudio EQ
+sudo apt install -y cairo-dock cairo-dock-plug-ins    # Cairo-Dock
+sudo apt install -y guayadeque                        # Guayadeque
+sudo apt install -y software-properties-common        # Kodi
+sudo apt install -y kodi                              # Kodi
+sudo aptitude install google-chrome-stable            # Google Chrome
  ## not needed, Calibre is allready installed portable in ~/bin, but keep it as fallback:
  # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
 ## update the portable Calibre installation:
@@ -79,16 +79,16 @@ cd
 
 ### optional: ###
 sudo apt install -y ubuntu-restricted-addons \
-ubuntu-restricted-extras														                # *1
-sudo apt install -y libdvd-pkg											             # *2
+ubuntu-restricted-extras                              # *1
+sudo apt install -y libdvd-pkg                        # *2
 echo "configuring libdvd-pkg..."
 sudo dpkg-reconfigure libdvd-pkg
-sudo apt install -y exfat-fuse exfat-utils					       # *3
-sudo apt install -y samba cifs-utils fusesmb				      # *5
-sudo apt install -y p7zip agave filezilla						       # *6
-sudo apt purge -y skype thunderbird hexchat pidgin	   # remove superfluous
-sudo apt update && sudo apt-get -y dist-upgrade			    # update packages & upgrade
-sudo apt autoremove																	                  # janitoring
+sudo apt install -y exfat-fuse exfat-utils            # *3
+sudo apt install -y samba cifs-utils fusesmb          # *5
+sudo apt install -y p7zip agave filezilla             # *6
+sudo apt purge -y skype thunderbird hexchat pidgin    # remove superfluous
+sudo apt update && sudo apt-get -y dist-upgrade       # update packages & upgrade
+sudo apt autoremove                                   # janitoring
 
 ### install all .deb-archives in ~/Downloads/postinstall: ###
 sudo dpkg -i -R --force-confdef --force-confold /home/gpm/Downloads/postinstall/ # Synergy issue!( *x)
@@ -103,9 +103,9 @@ sudo cat /etc/avahi/avahi-daemon.conf | sed -e "s/rlimit-nproc=3/#rlimit-nproc=3
 # copy temp file over original =>  mv /dir/tmpfile /dir/file
 sudo mv /tmp/tmpfile /etc/avahi/avahi-daemon.conf
  ## not needed, as PA-EQ gets not intalled:
- #cp /home/gpm/default.pa /home/gpm/.config/pulse/		  #volume setting restore
+ #cp /home/gpm/default.pa /home/gpm/.config/pulse/    #volume setting restore
 
-sudo cp /home/gpm/environment /etc/environment				    #set PATH systemwide
+sudo cp /home/gpm/environment /etc/environment        #set PATH systemwide
 
 echo ""
 echo "Alles fertig! Neustarten!"
